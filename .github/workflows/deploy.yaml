@@ -25,7 +25,7 @@ jobs:
           port: 22
           script: |
             set -e
-            
+
             echo "Current user:"
             whoami
 
@@ -37,7 +37,7 @@ jobs:
             echo "Current branch:"
             git branch
 
-            cd /home/${{ secrets.SSH_USERNAME }}/git-actions
+            cd /home/${{ secrets.SSH_USERNAME }}/git-actions-test
             git fetch origin
             git checkout ${{ github.ref_name }}
             git pull origin ${{ github.ref_name }}
