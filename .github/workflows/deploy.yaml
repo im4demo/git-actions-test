@@ -25,6 +25,18 @@ jobs:
           port: 22
           script: |
             set -e
+            
+            echo "Current user:"
+            whoami
+
+            echo "Current directory:"
+            pwd
+
+            echo "Repository status:"
+            git status
+            echo "Current branch:"
+            git branch
+
             cd /home/${{ secrets.SSH_USERNAME }}/git-actions
             git fetch origin
             git checkout ${{ github.ref_name }}
