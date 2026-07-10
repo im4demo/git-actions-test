@@ -4,11 +4,11 @@ const app = express();
 const PORT = process.env.PORT ?? 8080;
 
 app.get('/', (req, res) => {
-    return res.json( { msg: 'Hello from server-UPD3' } );
+    return res.json( { msg: 'Hello from server-UPD4' } );
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is up and running on port --- UPD3 ${PORT}`);
+    console.log(`Server is up and running on port --- UPD4 ${PORT}`);
 })
 
 
