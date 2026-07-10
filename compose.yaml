@@ -1,0 +1,11 @@
+services:
+  app:
+    image: im-app:v1.0.0
+    container_name: im-app-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
