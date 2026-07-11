@@ -32,15 +32,22 @@ jobs:
             echo "Current directory:"
             pwd
 
+            cd /home/${{ secrets.SSH_USERNAME }}/git-actions-test
+
+            echo "Current directory after cd:"
+            pwd
+          
             echo "Repository status:"
             git status
+          
             echo "Current branch:"
             git branch
 
-            cd /home/${{ secrets.SSH_USERNAME }}/git-actions-test
+            echo "Fetching origin..."
             git fetch origin
             git checkout ${{ github.ref_name }}
             git pull origin ${{ github.ref_name }}
+          
             docker compose up -d --build
 
           
