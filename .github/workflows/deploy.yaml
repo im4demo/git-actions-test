@@ -36,10 +36,10 @@ jobs:
 
             echo "Current directory after cd:"
             pwd
-          
+
             echo "Repository status:"
             git status
-          
+
             echo "Current branch:"
             git branch
 
@@ -47,7 +47,7 @@ jobs:
             git fetch origin
             git checkout ${{ github.ref_name }}
             git pull origin ${{ github.ref_name }}
-          
+            
             docker compose up -d --build
 
           
